@@ -1,0 +1,85 @@
+header{
+    height: 100vh;
+}
+
+.projects-container .projects{
+    width: 100%;
+}
+
+.intro-tech h1{
+    font-size: 2rem;
+}
+.intro-tech p{
+    font-size: 1rem;
+    display: none;
+}
+
+aside{
+    display: none;
+}
+.left-side{
+    order: 2;
+}
+.left-side h1 {
+    font-size: 5rem;
+}
+.section-1{
+    display: none;
+}
+.nav-bar{
+    
+    /* z-index: 8; */
+}
+.over-slide-left,.over-slide-right{
+    display: none;
+}  
+   
+
+.nav-links h3{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.contact h2,p{
+    font-size: 1.5rem;
+}
+
+.front-end,.back-end{
+    display: none;
+}
+
+.skills-section{
+    min-height:200vh ;
+    min-width: 100vw;
+    position: relative;
+    display: block;
+    
+}
+.face{
+    display: flex;
+     flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    overflow: none;
+    height:100%;
+    width: 100%;
+    margin: 2rem 0;
+
+}
+.full{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    display: block;
+}
+.skills-container-fluid{
+    position: relative;
+    display: block;
+    
+}
+.back-end-skills >h1 span{
+    color: rgb(0, 0, 0);
+  
+    -moz-text-fill-color: transparent;
+    -moz-text-stroke-width:2px;
+    
+  }
