@@ -98,7 +98,58 @@
   <!-- End Entry Section -->
 
   <!-- start Skills section  -->
+<section class="skills-section">
+  <div class="over-slide-left"></div>
+  <div class="over-slide-right"></div>
+  <div class="title title-skills">
+    <h1>My skills</h1>
+  </div>
 
+  <div class="face">
+
+
+    <div class="front-end" name='front-end'>
+
+    </div>
+
+    <div class="back-end" name='back-end'>
+
+    </div>
+
+
+    <div class="skills-container-fluid">
+
+
+      <div class="skills front-end-skills">
+        <h1 class="front-title">
+          <span>F</span><span id="r">r</span><span>o</span><span>n</span><span>t</span>
+          <span>e</span><span>n</span><span>d</span>
+        </h1>
+        <div class="skills-name">
+          {% for skill in skills %}
+          {% ifequal skill.stack 'FrontEnd' %}
+          <h1 class="skill skill-front-{{skill.colorNum}}">{{skill}}</h1>
+          {% endifequal %}
+          {% endfor %}
+
+        </div>
+      </div>
+
+      <div class="skills back-end-skills">
+        <h1>back <span>end</span></h1>
+        <div class="skills-name">
+          {% for skill in skills %}
+          {% ifequal skill.stack 'BackEnd' %}
+          <h1 class="skill skill-back-{{skill.colorNum}}">{{skill}}</h1>
+          {% endifequal %}
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  </sction>
 
 
 
