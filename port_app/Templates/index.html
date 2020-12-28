@@ -179,7 +179,7 @@
       {% for project in Projects %}
       <div class="project-container">
         <div class="image-container">
-          <img src="{% static 'images/' %}{{project.image.url}}" alt="Image">
+          <img src="{% static 'images' %}{{project.image.url}}" alt="Image">
         </div>
         <div class="info-container">
           <h1>{{project.title}}</h1>
