@@ -42,6 +42,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Portfolio_Project.urls'
 
+TEMPLATE_DIRS = (
+    os.path.join(SETTINGS_PATH, 'Templates'),
+)
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
