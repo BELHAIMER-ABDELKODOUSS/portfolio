@@ -98,105 +98,189 @@
   <!-- End Entry Section -->
 
   <!-- start Skills section  -->
-<section class="skills-section">
-  <div class="over-slide-left"></div>
-  <div class="over-slide-right"></div>
-  <div class="title title-skills">
-    <h1>My skills</h1>
-  </div>
 
-  <div class="face">
-
-
-    <div class="front-end" name='front-end'>
-
+  <section class="skills-section">
+    <div class="over-slide-left"></div>
+    <div class="over-slide-right"></div>
+    <div class="title title-skills">
+      <h1>My skills</h1>
     </div>
 
-    <div class="back-end" name='back-end'>
+    <div class="face">
 
+
+      <div class="front-end" name='front-end'>
+
+      </div>
+
+      <div class="back-end" name='back-end'>
+
+      </div>
+
+
+      <div class="skills-container-fluid">
+
+
+        <div class="skills front-end-skills">
+          <h1 class="front-title">
+            <span>F</span><span id="r">r</span><span>o</span><span>n</span><span>t</span>
+            <span>e</span><span>n</span><span>d</span>
+          </h1>
+          <div class="skills-name">
+            {% for skill in skills %}
+            {% ifequal skill.stack 'FrontEnd' %}
+            <h1 class="skill skill-front-{{skill.colorNum}}">{{skill}}</h1>
+            {% endifequal %}
+            {% endfor %}
+
+          </div>
+        </div>
+
+        <div class="skills back-end-skills">
+          <h1>back <span>end</span></h1>
+          <div class="skills-name">
+            {% for skill in skills %}
+            {% ifequal skill.stack 'BackEnd' %}
+            <h1 class="skill skill-back-{{skill.colorNum}}">{{skill}}</h1>
+            {% endifequal %}
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
     </div>
 
+    </sction>
 
-    <div class="skills-container-fluid">
+
+    <!-- end skills section -->
+
+    <!-- Start projects section -->
+
+    <section class="projects-container">
+      <div class="projects">
+        <div class="title">
+          <h1>Like these</h1>
+        </div>
+        {% for project in Projects %}
+        <div class="project-container">
+          <div class="image-container">
+            <img src="{% static 'images' %}{{project.image.url}}" alt="Image">
+          </div>
+          <div class="info-container">
+            <h1>{{project.title}}</h1>
+            <p>{{project.description}}
+            </p>
+
+            <p>
+              {% if project.listFront %}
+              <span class="span-projects-1">Front End Technologies
+                {% for tech in project.tech.all %}
+                {% ifequal tech.stack 'FrontEnd' %}
+                - {{tech}}
+                {% endifequal %}
+                {% endfor %}
+              </span><br />
+              {% endif %}
 
 
-      <div class="skills front-end-skills">
-        <h1 class="front-title">
-          <span>F</span><span id="r">r</span><span>o</span><span>n</span><span>t</span>
-          <span>e</span><span>n</span><span>d</span>
-        </h1>
-        <div class="skills-name">
-          {% for skill in skills %}
-          {% ifequal skill.stack 'FrontEnd' %}
-          <h1 class="skill skill-front-{{skill.colorNum}}">{{skill}}</h1>
-          {% endifequal %}
-          {% endfor %}
+              {% if project.listBack %}
+              <span class="span-projects-2">Back End Technologies
+                {% for tech in project.tech.all %}
+                {% ifequal tech.stack 'BackEnd' %}
+                - {{tech}}
+                {% endifequal %}
+                {% endfor %}
+              </span>
+
+              {% endif %}
+            </p>
+
+            <a href="" class="live-server">see the live website
+              <i class="far fa-square"></i></a>
+
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- end projects section -->
+
+    <!-- Contact Form -->
+
+    <section class="contact-form-container">
+      <div class="left-side">
+        <div class="get-in-touch">
+          <h1>get in touch</h1>
+          <div class="social-links">
+            <a href="" class="link">Twitter</a>
+            <a href="" class="link">Githup</a>
+            <a href="" class="link">Facebook</a>
+            <a href="" class="link">Linkden</a>
+            <a href="" class="link">Phone</a>
+          </div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="contact-form">
+          <form action="" id="form" method='POST'>
+            {% csrf_token %}
+            <div class="form-control">
+              {{Contact.firstName}}
+            </div>
+            <div class="form-control">
+              {{Contact.lastName}}
+            </div>
+            <div class="form-control">
+              {{Contact.email}}
+            </div>
+            <div class="form-control">
+              {{Contact.message}}
+            </div>
+            <div class="form-control">
+              <button type="submit" class="sub-btn"> Submit </button>
+            </div>
+          </form>
 
         </div>
       </div>
-
-      <div class="skills back-end-skills">
-        <h1>back <span>end</span></h1>
-        <div class="skills-name">
-          {% for skill in skills %}
-          {% ifequal skill.stack 'BackEnd' %}
-          <h1 class="skill skill-back-{{skill.colorNum}}">{{skill}}</h1>
-          {% endifequal %}
-          {% endfor %}
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  </sction>
-
-
-
-  <!-- end skills section -->
-
-  <!-- Start projects section -->
-
-
-
-  <!-- end projects section -->
-
-  <!-- Contact Form -->
-
-  <!-- end contact form 
+    </section>
+    <!-- end contact form 
 
   <!-- start nav bar -->
 
-  <nav class="nav-bar" name="vav-bar">
-    <ul class="nav-links">
-      <h3>Twitter</h3>
-      <h3>Youtube</h3>
-      <h3>Instragram</h3>
-      <h3>Linkden</h3>
-      <h3>Githup</h3>
-    </ul>
-    <div class="contact">
-      <h2>Stay in touch.</h2>
-      <p>
-        Hello, I am ABDELKODOUSS BELHAIMER. I design and develop full-stack web applications, 
-        If my skills are useful to you, it will be my great pleasure to serve.
-      </p>
-    </div>
-  </nav>
+    <nav class="nav-bar" name="vav-bar">
+      <ul class="nav-links">
+        <h3>Twitter</h3>
+        <h3>Youtube</h3>
+        <h3>Instragram</h3>
+        <h3>Linkden</h3>
+        <h3>Githup</h3>
+      </ul>
+      <div class="contact">
+        <h2>Stay in touch.</h2>
+        <p>
+          Hello, I am ABDELKODOUSS BELHAIMER. I design and develop full-stack web applications,
+          If my skills are useful to you, it will be my great pleasure to serve.
+        </p>
+      </div>
+    </nav>
 
-  <!-- end nav-bar !-->
-<script>
-const inputsForm = document.querySelectorAll('#form input');
-const textarea =document.querySelector('textarea');
-textarea.id="message";
-textarea.placeholder="Message";
+    <!-- end nav-bar !-->
+    <script>
+      const inputsForm = document.querySelectorAll('#form input');
+      const textarea = document.querySelector('textarea');
+      textarea.id = "message";
+      textarea.placeholder = "Message";
 
-inputsForm[1].placeholder = 'First Name';
-inputsForm[2].placeholder = 'Last Name';
-inputsForm[3].placeholder = 'Email';
+      inputsForm[1].placeholder = 'First Name';
+      inputsForm[2].placeholder = 'Last Name';
+      inputsForm[3].placeholder = 'Email';
 
 
-</script>
+    </script>
 </body>
 
 </html>
