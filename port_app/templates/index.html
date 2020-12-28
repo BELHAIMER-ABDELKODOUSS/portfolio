@@ -106,96 +106,12 @@
 
   <!-- Start projects section -->
 
-  <section class="projects-container">
-    <div class="projects">
-      <div class="title">
-        <h1>Like these</h1>
-      </div>
-      {% for project in Projects %}
-      <div class="project-container">
-        <div class="image-container">
-          <img src="{% static 'images' %}{{project.image.url}}" alt="Image">
-        </div>
-        <div class="info-container">
-          <h1>{{project.title}}</h1>
-          <p>{{project.description}}
-          </p>
-           
-            <p> 
-                {% if project.listFront %}
-              <span class="span-projects-1">Front End Technologies 
-               {% for tech in project.tech.all %}
-               {% ifequal tech.stack 'FrontEnd' %}
-                - {{tech}} 
-               {% endifequal %}
-              {% endfor %}
-              </span><br/>
-              {% endif %}
 
-
-              {% if project.listBack %}
-              <span class="span-projects-2">Back End Technologies
-                {% for tech in project.tech.all %}
-               {% ifequal tech.stack 'BackEnd' %}
-                - {{tech}} 
-               {% endifequal %}
-                {% endfor %}
-              </span> 
-
-              {% endif %}
-            </p>
-            
-          <a href="" class="live-server">see the live website
-            <i class="far fa-square"></i></a>
-
-        </div>
-      </div>
-
-      {% endfor %}
-    </div>
-  </section>
 
   <!-- end projects section -->
 
   <!-- Contact Form -->
 
-  <section class="contact-form-container">
-    <div class="left-side">
-      <div class="get-in-touch">
-        <h1>get in touch</h1>
-        <div class="social-links">
-          <a href="" class="link">Twitter</a>
-          <a href="" class="link">Githup</a>
-          <a href="" class="link">Facebook</a>
-          <a href="" class="link">Linkden</a>
-          <a href="" class="link">Phone</a>
-        </div>
-      </div>
-    </div>
-    <div class="right-side">
-      <div class="contact-form">
-         <form action="" id="form" method='POST' >
-         {% csrf_token %}
-          <div class="form-control">
-            {{Contact.firstName}}
-          </div>
-          <div class="form-control">
-            {{Contact.lastName}}
-          </div>
-          <div class="form-control">
-            {{Contact.email}}
-          </div>
-          <div class="form-control">
-            {{Contact.message}}
-          </div>
-          <div class="form-control">
-            <button type="submit" class="sub-btn"> Submit </button>
-          </div>
-        </form> 
-       
-      </div>
-    </div>
-  </section>
   <!-- end contact form 
 
   <!-- start nav bar -->
