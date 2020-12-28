@@ -4,6 +4,6 @@ from .views import *
 app_name = 'port_app'
 
 urlpatterns = [
-    url(r'^$', Home, name='Home'),
+    url(r'^/$', Home, name='Home'),
     
 ]
