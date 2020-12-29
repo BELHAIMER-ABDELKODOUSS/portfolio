@@ -17,7 +17,7 @@ SECRET_KEY = '7t!!lcjwkx+*pf3+#@d&*+x8z16!mdzh$r!j4f+s($^ob4-#8y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "selfportfolio.herokuapp.com"]
+# ALLOWED_HOSTS = ["127.0.0.1", "selfportfolio.herokuapp.com"]
 
 
 # Application definition
@@ -118,6 +118,10 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
-django_heroku.settings(locals())
+
+
+# django_heroku.settings(locals())
