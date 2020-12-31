@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -39,7 +40,7 @@ class Projects(models.Model):
     tech = models.ManyToManyField(
         Tech, symmetrical=False, related_name='children')
     image = models.ImageField(null=False, blank=False, default='Image')
-
+    photo = CloudinaryField('image')
     def listFront(self):
         return self.tech.filter(stack='FrontEnd')
 

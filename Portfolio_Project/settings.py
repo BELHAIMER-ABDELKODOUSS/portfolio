@@ -1,7 +1,11 @@
 import django_heroku
 import dj_database_url
-
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -128,3 +132,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
 # django_heroku.settings(locals())
+cloudinary.config(
+    cloud_name="dfy2juy0p",
+    api_key="563251922586531",
+    api_secret="eGOhYhD8hKBkf2VTyEL2yukDm-4"
+)
