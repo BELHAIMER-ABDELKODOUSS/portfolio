@@ -39,13 +39,15 @@ class Projects(models.Model):
     description = models.TextField()
     tech = models.ManyToManyField(
         Tech, symmetrical=False, related_name='children')
-    image = models.ImageField(null=False, blank=False, default='Image')
+    url = models.CharField(max_length=500, null=False,
+                           blank=False, default='#')
     photo = CloudinaryField('image')
+
     def listFront(self):
         return self.tech.filter(stack='FrontEnd')
 
     def listBack(self):
-            return self.tech.filter(stack='BackEnd')
+        return self.tech.filter(stack='BackEnd')
 
     def __str__(self):
         return self.title
